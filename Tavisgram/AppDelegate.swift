@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Code to initialize Parse
+        // (See above section 'Parse `initializeWithConfiguration` vs `setApplicationId`', if you have not already set it up)
+        
+        Parse.initialize(
+            with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "Tavisgram"
+                configuration.clientKey = "bu2134"  // set to nil assuming you have not set clientKey
+                configuration.server = "https://ancient-wildwood-42712.herokuapp.com/parse"
+            })
+        )
+        
+        if PFUser.current() != nil {
+            // if there is a logged in user then load the home view controller
+            print("welcome back user!!!")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
+            window?.rootViewController = homeViewController
+        }
+        
         return true
     }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

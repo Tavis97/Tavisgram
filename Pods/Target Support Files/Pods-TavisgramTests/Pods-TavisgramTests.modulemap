@@ -1,0 +1,6 @@
+framework module Pods_TavisgramTests {
+  umbrella header "Pods-TavisgramTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
