@@ -10,24 +10,40 @@ import UIKit
 import Parse
 
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var username1: [PFObject]?
+    var username: [PFObject]?
+    //created this variable to assign to the post that is in the parse chat
+    var posts : [PFObject]
+    
  
     @IBOutlet weak var TLTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let query = PFQuery(className: "Post")
-        query.findObjectsInBackground { ( post: [PFObject]?, error: Error?) in
-            let cell = self.TLTableView.dequeueReusableCell(withIdentifier: "TLTableViewCell") as! TLTableViewCell
-            if let user = username["user"] as? PFUser {
-                cell.usernameLabel.text = user.username
-            }
+        query.includeKey("author")
+        query.findObjectsInBackground { ( posts: [PFObject]?, error: Error?) in
+            self.posts = posts
+            //reload the table so everything is rendered
+            self.TLTableView.reloadData()
+//            if let user = post["author"] as? PFUser {
+//                cell.usernameLabel.text = user.username
+//            }
         }
         
         // Do any additional setup after loading the view.
     }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.TLTableView.dequeueReusableCell(withIdentifier: "TLTableViewCell") as! TLTableViewCell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // determind whether how many cells we should have in a function 
+        return posts.count
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
