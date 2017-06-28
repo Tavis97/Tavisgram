@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "056F43E5F51931F2FFBA0FBA4EA4C0ED"
+               BlueprintIdentifier = "E5517D8069975589732ED6AEAC2FD185"
                BuildableName = "Pods_Tavisgram.framework"
                BlueprintName = "Pods-Tavisgram"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "056F43E5F51931F2FFBA0FBA4EA4C0ED"
+            BlueprintIdentifier = "E5517D8069975589732ED6AEAC2FD185"
             BuildableName = "Pods_Tavisgram.framework"
             BlueprintName = "Pods-Tavisgram"
             ReferencedContainer = "container:Pods.xcodeproj">

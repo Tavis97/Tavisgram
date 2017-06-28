@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ParseUI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Tavisgram.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,11 +37,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>056F43E5F51931F2FFBA0FBA4EA4C0ED</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1E559576339EE5EB1AC456C1922A7C1F</key>
 		<dict>
 			<key>primary</key>
@@ -48,6 +48,16 @@
 			<true/>
 		</dict>
 		<key>6EE458AB7C9239893E5C6E840C0BF9B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A760316124FD796EF09C09479E9F0021</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5517D8069975589732ED6AEAC2FD185</key>
 		<dict>
 			<key>primary</key>
 			<true/>

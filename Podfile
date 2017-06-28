@@ -7,6 +7,7 @@ target 'Tavisgram' do
 
   # Pods for Tavisgram
 pod 'Parse'
+pod 'ParseUI'
 
   target 'TavisgramTests' do   
 inherit! :search_paths

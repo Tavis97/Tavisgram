@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class TLTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var TLImageView: UIImageView!
+    @IBOutlet weak var TLImageView: PFImageView!
     
     @IBOutlet weak var TLCaptionLabel: UILabel!
     
     @IBOutlet weak var usernameLabel: UILabel!
+    
+    var instagramPost: PFObject! {
+        didSet {
+            self.TLImageView.file = instagramPost["media"] as? PFFile
+            self.TLImageView.loadInBackground()
+            let username = instagramPost["author"] as? PFUser
+            self.usernameLabel.text = username?["username"] as? String
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

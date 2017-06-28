@@ -8,23 +8,26 @@
 
 import UIKit
 import Parse
-
+import ParseUI
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var username: [PFObject]?
     //created this variable to assign to the post that is in the parse chat
-    var posts : [PFObject]
+    var posts : [PFObject] = []
     
  
     @IBOutlet weak var TLTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //this helps tableview know which data to load
+        TLTableView.dataSource = self
         let query = PFQuery(className: "Post")
         query.includeKey("author")
         query.findObjectsInBackground { ( posts: [PFObject]?, error: Error?) in
-            self.posts = posts
+            self.posts = posts!
             //reload the table so everything is rendered
+            print(self.posts)
             self.TLTableView.reloadData()
 //            if let user = post["author"] as? PFUser {
 //                cell.usernameLabel.text = user.username
@@ -35,9 +38,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print ( "Got here mf!")
         let cell = self.TLTableView.dequeueReusableCell(withIdentifier: "TLTableViewCell") as! TLTableViewCell
+        // this gives us the number of rows
+       let post =  posts[indexPath.row]
+        cell.instagramPost = post 
         
+        return cell
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // determind whether how many cells we should have in a function 
