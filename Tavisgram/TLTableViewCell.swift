@@ -24,6 +24,7 @@ class TLTableViewCell: UITableViewCell {
             self.TLImageView.loadInBackground()
             let username = instagramPost["author"] as? PFUser
             self.usernameLabel.text = username?["username"] as? String
+            self.TLCaptionLabel.text  = instagramPost["caption"] as? String
         }
     }
     override func awakeFromNib() {

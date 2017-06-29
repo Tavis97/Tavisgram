@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print ( "Got here mf!")
+        
         let cell = self.TLTableView.dequeueReusableCell(withIdentifier: "TLTableViewCell") as! TLTableViewCell
         // this gives us the number of rows
        let post =  posts[indexPath.row]

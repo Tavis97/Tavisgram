@@ -21,6 +21,7 @@
 		59E1616E1F032E3600F999AF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E1616D1F032E3600F999AF /* Post.swift */; };
 		59E161741F0430C700F999AF /* CompsoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E161731F0430C700F999AF /* CompsoseViewController.swift */; };
 		59E161761F04333F00F999AF /* TLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E161751F04333F00F999AF /* TLTableViewCell.swift */; };
+		59E161781F0482D700F999AF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E161771F0482D700F999AF /* ProfileViewController.swift */; };
 		F39A017E24572860CD09C96A /* Pods_TavisgramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9FEB36F54C071510D0CF7B /* Pods_TavisgramTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		59E1616D1F032E3600F999AF /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		59E161731F0430C700F999AF /* CompsoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompsoseViewController.swift; sourceTree = "<group>"; };
 		59E161751F04333F00F999AF /* TLTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLTableViewCell.swift; sourceTree = "<group>"; };
+		59E161771F0482D700F999AF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6881C9E100CE317DB8DDBED3 /* Pods-TavisgramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TavisgramTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TavisgramTests/Pods-TavisgramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7CDB706002D91A2381C4AF11 /* Pods_TavisgramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TavisgramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9FEB36F54C071510D0CF7B /* Pods_TavisgramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TavisgramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				59E161691F031BEA00F999AF /* HomeViewController.swift */,
 				59E1616D1F032E3600F999AF /* Post.swift */,
 				59E161751F04333F00F999AF /* TLTableViewCell.swift */,
+				59E161771F0482D700F999AF /* ProfileViewController.swift */,
 			);
 			path = Tavisgram;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				59E1616A1F031BEA00F999AF /* HomeViewController.swift in Sources */,
 				59E161741F0430C700F999AF /* CompsoseViewController.swift in Sources */,
 				59E1616E1F032E3600F999AF /* Post.swift in Sources */,
+				59E161781F0482D700F999AF /* ProfileViewController.swift in Sources */,
 				59E161761F04333F00F999AF /* TLTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
