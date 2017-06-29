@@ -18,12 +18,15 @@ class TLTableViewCell: UITableViewCell {
     
     @IBOutlet weak var usernameLabel: UILabel!
     
+    @IBOutlet weak var smallusernameLabel: UILabel!
+    
     var instagramPost: PFObject! {
         didSet {
             self.TLImageView.file = instagramPost["media"] as? PFFile
             self.TLImageView.loadInBackground()
             let username = instagramPost["author"] as? PFUser
             self.usernameLabel.text = username?["username"] as? String
+            self.smallusernameLabel.text = username?["username"] as? String
             self.TLCaptionLabel.text  = instagramPost["caption"] as? String
         }
     }

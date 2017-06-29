@@ -17,6 +17,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Username",
+                                                               attributes: [NSForegroundColorAttributeName: UIColor.white])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password",
+                                                                     attributes: [NSForegroundColorAttributeName: UIColor.white])
         // Do any additional setup after loading the view.
     }
 
@@ -40,9 +44,7 @@ class LoginViewController: UIViewController {
         
     }
    
-   
-    @IBAction func whenSignUpclicked(_ sender: Any) {
-        
+    @IBAction func whenSignUpClicked(_ sender: Any) {
         let newUser = PFUser()
         
         newUser.username = usernameTextField.text
@@ -55,14 +57,11 @@ class LoginViewController: UIViewController {
                 
                 
             }else{
-            print(error?.localizedDescription ?? " Malfucntion")
-                
-        }
-    
+                print(error?.localizedDescription ?? " Malfucntion")
+    }
         }
     }
- 
-    /*
+     /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
