@@ -59,6 +59,11 @@ class CompsoseViewController: UIViewController, UIImagePickerControllerDelegate,
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func onclick(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    
     
     @IBAction func whenPostButtonisClicked(_ sender: Any) {
         

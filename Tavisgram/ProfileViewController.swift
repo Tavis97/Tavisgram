@@ -8,14 +8,38 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var profilepicImageView: UIImageView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var profilepicImageView: PFImageView!
+    override func viewDidAppear(_ animated: Bool) {
+//        
+//        let username = PFUser.current()
+//        if let userImagefile = username!["portrait"] as? PFFile {
+//            print(userImagefile)
+//            self.profilepicImageView.file = userImagefile
+//            self.profilepicImageView.loadInBackground()
+//        } else {
+//            print("no profile file found")
+//        }
+
+    }
+    override func viewDidLoad() {
+        
+        
+        
+        let username = PFUser.current()
+        if let userImagefile = username!["portrait"] as? PFFile {
+            print(userImagefile)
+            self.profilepicImageView.file = userImagefile
+            self.profilepicImageView.loadInBackground()
+        } else {
+            print("no profile file found")
+        }
+        
+         //Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,21 +54,45 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func whenProfilePicClicked(_ sender: Any) {
-        let vc = UIImagePickerController()
-        vc.delegate = self
-        vc.allowsEditing = true
-        vc.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        self.present(vc, animated: true, completion: nil)
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+            action in
+            picker.sourceType = .camera
+            self.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {
+            action in
+            picker.sourceType = .photoLibrary
+            self.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+//        let vc = UIImagePickerController()
+//        vc.delegate = self
+//        vc.allowsEditing = true
+//        vc.sourceType = UIImagePickerControllerSourceType.photoLibrary
+//        self.present(vc, animated: true, completion: nil)
         
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
         // Get the image captured by the UIImagePickerController
-        //        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let profileImage = info[UIImagePickerControllerEditedImage] as! UIImage
-        self.profilepicImageView.image = profileImage
-        
+        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+//        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        self.profilepicImageView.image = originalImage
+        if let user = PFUser.current(){
+        user["portrait"] = Post.getPFFileFromImage(image: originalImage)
+            user.saveInBackground(block: { (success:Bool, error:Error?) in
+                if success{
+                    print("profile picture is saved")
+                }else{
+                    print(error?.localizedDescription)
+                }
+        })
+        }
         // Do something with the images (based on your use case)
         
         // Dismiss UIImagePickerController to go back to your original view controller

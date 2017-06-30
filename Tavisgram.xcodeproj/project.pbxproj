@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3427508DCD872F4225FBEAD6 /* Pods_Tavisgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8F38397302533B86CBA937 /* Pods_Tavisgram.framework */; };
 		587DC6B09B691DE960ED6182 /* Pods_TavisgramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CDB706002D91A2381C4AF11 /* Pods_TavisgramUITests.framework */; };
+		593ACBAD1F059E4100B36F58 /* PressedPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593ACBAC1F059E4100B36F58 /* PressedPictureViewController.swift */; };
 		59E1613A1F02FAEC00F999AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E161391F02FAEC00F999AF /* AppDelegate.swift */; };
 		59E1613C1F02FAEC00F999AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E1613B1F02FAEC00F999AF /* ViewController.swift */; };
 		59E1613F1F02FAEC00F999AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E1613D1F02FAEC00F999AF /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		029DDF2597326D6CC61ADBAE /* Pods-TavisgramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TavisgramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TavisgramTests/Pods-TavisgramTests.release.xcconfig"; sourceTree = "<group>"; };
 		0CAF6FCBD936076348CCDE6A /* Pods-TavisgramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TavisgramUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TavisgramUITests/Pods-TavisgramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4BEF82114CCF9FB4C4C822F6 /* Pods-Tavisgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tavisgram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tavisgram/Pods-Tavisgram.release.xcconfig"; sourceTree = "<group>"; };
+		593ACBAC1F059E4100B36F58 /* PressedPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressedPictureViewController.swift; sourceTree = "<group>"; };
 		59E161361F02FAEC00F999AF /* Tavisgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tavisgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59E161391F02FAEC00F999AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59E1613B1F02FAEC00F999AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				59E1616D1F032E3600F999AF /* Post.swift */,
 				59E161751F04333F00F999AF /* TLTableViewCell.swift */,
 				59E161771F0482D700F999AF /* ProfileViewController.swift */,
+				593ACBAC1F059E4100B36F58 /* PressedPictureViewController.swift */,
 			);
 			path = Tavisgram;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				59E161741F0430C700F999AF /* CompsoseViewController.swift in Sources */,
 				59E1616E1F032E3600F999AF /* Post.swift in Sources */,
 				59E161781F0482D700F999AF /* ProfileViewController.swift in Sources */,
+				593ACBAD1F059E4100B36F58 /* PressedPictureViewController.swift in Sources */,
 				59E161761F04333F00F999AF /* TLTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
